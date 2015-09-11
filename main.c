@@ -139,7 +139,7 @@ int solve_square(double a, double b, double c, double* x1, double* x2)
         return solve_linear(b, c, x1);
 
     double d = b * b - 4 * a * c;
-    if ((d < 0) && (fabs(d) > DBL_EPSILON)))
+    if ((d < 0) && (fabs(d) > DBL_EPSILON))
     {
         return 0;
     } else if (fabs(d) < DBL_EPSILON)
@@ -148,7 +148,7 @@ int solve_square(double a, double b, double c, double* x1, double* x2)
         return 1;
     } else
     {
-        d = sqrt(d);
+        d = sqrt(fabs(d));
         *x1 = (-b - d) / (2 * a);
         *x2 = (-b + d) / (2 * a);
         return 2;
